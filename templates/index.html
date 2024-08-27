@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="goldCoinCounter" style="position: absolute; top: 10px; right: 10px; font-size: 20px;">
+        <img src="{{ url_for('static', filename='gold coin.jpg') }}" alt="Gold Coin" style="width: 30px; height: 30px;">
+        Gold Coins: <span id="coinCount">0</span>
+    </div>
+
+    <img src="{{ url_for('static', filename='store icon.png') }}" alt="Store" id="storeIcon" style="position: absolute; top: 7px; left: 30px; width: 50px; height: 50px; cursor: pointer;">
+
+    <h1>To-Do List</h1>
+    <div id="loader" class="loader">Loading...</div>
+
+    <div class="task-entry">
+        <input type="text" id="taskInput" placeholder="Enter a task">
+        <button id="addTaskButton" onclick="addTask()">Add Task</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <div id="jokeButton">Tell me a joke!</div>
+    <div id="jokeDialog" class="dialog">
+        <h2>Joke</h2>
+        <p id="jokeContent">...</p>
+        <button onclick="closeJokeDialog()">Close</button>
+    </div>
+
+    <div id="storePossessionsDialog" class="dialog">
+        <ul class="tab">
+            <li><button class="tablinks" onclick="openTab(event, 'VirtualStore')">Virtual Store</button></li>
+            <li><button class="tablinks" onclick="openTab(event, 'MyPossessions')">My Possessions</button></li>
+        </ul>
+
+        <div id="VirtualStore" class="tabcontent">
+            <h2>Virtual Store</h2>
+            <div id="storeItems"></div>
+        </div>
+
+        <div id="MyPossessions" class="tabcontent">
+            <h2>My Possessions</h2>
+            <div id="possessionsList" class="gallery"></div>
+        </div>
+
+        <button onclick="closeDialog('storePossessionsDialog')">Close</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
