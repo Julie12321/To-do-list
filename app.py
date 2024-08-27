@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request, render_template
 from openai import OpenAI
 
 app = Flask(__name__)
-OpenAI.api_key = 'REMOVED'
+OpenAI.api_key = 'YOUR_API_KEY_HERE'
 client = OpenAI(api_key=OpenAI.api_key)
 
 tasks = []
