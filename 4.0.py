@@ -3,7 +3,7 @@ from tkinter import messagebox, simpledialog, font
 from openai import OpenAI
 
 # OpenAI API Integration
-api_key = 'REMOVED'
+api_key = 'YOUR_API_KEY_HER'
 client = OpenAI(api_key=api_key)
 
 def categorize_task(task):

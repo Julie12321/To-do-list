@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox, font
 from openai import OpenAI
 
-client = OpenAI(api_key='REMOVED')
+client = OpenAI(api_key='YOUR_API_KEY_HER')
 
 # OpenAI API Integration
 
